@@ -1,0 +1,9 @@
+name: rpgPlugin
+main: joey.rpgplugin.main.main
+version: 1.0
+commands:
+    testcommand:
+        description: Command Description
+        usage: /testcommand
+        permission: testcommand.permission
+        permission-message: You do not have permission to use this command.
