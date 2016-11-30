@@ -13,13 +13,13 @@ public class mobObject {
 	
 	public void equipEntity(){
 		if(!(pHead.equals(null))){
-			
+			pEntity.getEquipment().setHelmet(pHead);
 		}if(!(pBody.equals(null))){
-			
+			pEntity.getEquipment().setChestplate(pBody);
 		}if(!(pLegs.equals(null))){
-			
+			pEntity.getEquipment().setLeggings(pLegs);
 		}if(!(pBoots.equals(null))){
-			
+			pEntity.getEquipment().setBoots(pBoots);
 		}
 	}
 	
