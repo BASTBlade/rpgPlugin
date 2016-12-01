@@ -5,12 +5,15 @@ import java.util.logging.Logger;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import joey.rpgplugin.objects.mobObject;
+import joey.rpgplugin.filehandlers.*;
 
 
 @SuppressWarnings("unused")
@@ -29,6 +32,12 @@ public class main extends JavaPlugin implements Listener{
 		PluginManager pm = getServer().getPluginManager();
 		pm.registerEvents(this , this);
 	}
+	
+	@EventHandler
+	public void onPlayerJoin(PlayerJoinEvent event){
+		playerFileHandler pHandler = new playerFileHandler(event);
+	}
+	
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args){
 		Player player = (Player) sender;
 		if (!(sender instanceof Player)) {
