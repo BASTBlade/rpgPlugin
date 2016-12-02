@@ -1,14 +1,16 @@
 package joey.rpgplugin.objects;
 
+import org.bukkit.Location;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.inventory.ItemStack;
 
 public class mobObject {
-	public mobObject(String name, LivingEntity entity , int level , String faction){
+	public mobObject(String name, LivingEntity entity , int level , String faction , Location loc){
 		setName(name);
 		setEntity(entity);
 		setLevel(level);
 		setFaction(faction);
+		setSpawnLocation(loc);
 	}
 	
 	public void equipEntity(){
@@ -85,10 +87,20 @@ public class mobObject {
 	}
 
 
+	public Location getSpawnLocation() {
+		return spawnLocation;
+	}
+
+	public void setSpawnLocation(Location spawnLocation) {
+		this.spawnLocation = spawnLocation;
+	}
+
+
 	private String pName = "";
 	private LivingEntity pEntity;
 	private int pLevel = 0;
 	private String pFaction = "";
+	private Location spawnLocation;
 	private ItemStack pHead;
 	private ItemStack pBody;
 	private ItemStack pLegs;
